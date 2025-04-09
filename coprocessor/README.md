@@ -1,25 +1,12 @@
-# Coprocessor
+# Javascript Coprocessor
 
-## Getting Started
+## Description
 
-This repo is built to help demonstrate how Auth works with Apollo Router via a coprocessor.
+In `js-coprocessor/src/index.js`, the coprocessor is setup with `express` to listen to the `/` POST endpoint and respond to the `RouterRequest` stage.
 
-## Running the Application
+In the `processRouterRequestStage` function, the payload is logged.
 
-To start the Node server in development mode run the following
+## Running the coprocessor
 
-```
-npm run dev
-```
-
-In order to compile the application for deployment run
-
-```
-npm run build
-```
-
-The compiled buid code can then be run with the following
-
-```
-npm start
-```
+1. Run `npm install` to install dependencies
+1. Run `npm run dev` to start the service

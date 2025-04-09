@@ -1,0 +1,17 @@
+coprocessor:
+  url: http://localhost:3007
+  # Coprocessor is called at the supergraph response stage to update the response status code
+  # https://www.apollographql.com/docs/graphos/routing/customization/coprocessor#supergraphresponse
+  supergraph:
+    response:
+      # The coprocessor will not actually use the headers, this makes sure that this stage is called
+      context: true
+  # Coprocessor is called at the subgraph response stage to update the response status code
+  # https://www.apollographql.com/docs/graphos/routing/customization/coprocessor#subgraphresponse
+  subgraph:
+    all:
+      # The coprocessor requires the context and status code to be passed to it
+      # It will add the status code to the response context
+      response:
+        context: true
+        status_code: true
